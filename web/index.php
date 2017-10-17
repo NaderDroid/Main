@@ -1,7 +1,7 @@
 <?php
 // Code for Twilio Support Document: https://support.twilio.com/hc/en-us/articles/223134267-Building-an-SMS-Keyword-Response-Application
 // Get the PHP helper library from twilio.com/docs/php/install
-require '/Users/nader/Desktop/Twilio/Project/vendor/autoload.php'; // Loads the library. This may vary depending on how you installed the library.
+require '../vendor/autoload.php'; // Loads the library. This may vary depending on how you installed the library.
 use Twilio\Rest\Client;
 
 /*
