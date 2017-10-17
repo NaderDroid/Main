@@ -56,12 +56,10 @@ abstract class HostedNumberOrderOptions {
      * @param string $statusCallbackUrl Status Callback URL.
      * @param string $statusCallbackMethod Status Callback Method.
      * @param string $smsApplicationSid SMS Application Sid.
-     * @param string $addressSid Address sid.
-     * @param string $email Email.
      * @return CreateHostedNumberOrderOptions Options builder
      */
-    public static function create($accountSid = Values::NONE, $friendlyName = Values::NONE, $uniqueName = Values::NONE, $ccEmails = Values::NONE, $smsUrl = Values::NONE, $smsMethod = Values::NONE, $smsFallbackUrl = Values::NONE, $smsFallbackMethod = Values::NONE, $statusCallbackUrl = Values::NONE, $statusCallbackMethod = Values::NONE, $smsApplicationSid = Values::NONE, $addressSid = Values::NONE, $email = Values::NONE) {
-        return new CreateHostedNumberOrderOptions($accountSid, $friendlyName, $uniqueName, $ccEmails, $smsUrl, $smsMethod, $smsFallbackUrl, $smsFallbackMethod, $statusCallbackUrl, $statusCallbackMethod, $smsApplicationSid, $addressSid, $email);
+    public static function create($accountSid = Values::NONE, $friendlyName = Values::NONE, $uniqueName = Values::NONE, $ccEmails = Values::NONE, $smsUrl = Values::NONE, $smsMethod = Values::NONE, $smsFallbackUrl = Values::NONE, $smsFallbackMethod = Values::NONE, $statusCallbackUrl = Values::NONE, $statusCallbackMethod = Values::NONE, $smsApplicationSid = Values::NONE) {
+        return new CreateHostedNumberOrderOptions($accountSid, $friendlyName, $uniqueName, $ccEmails, $smsUrl, $smsMethod, $smsFallbackUrl, $smsFallbackMethod, $statusCallbackUrl, $statusCallbackMethod, $smsApplicationSid);
     }
 }
 
@@ -270,10 +268,8 @@ class CreateHostedNumberOrderOptions extends Options {
      * @param string $statusCallbackUrl Status Callback URL.
      * @param string $statusCallbackMethod Status Callback Method.
      * @param string $smsApplicationSid SMS Application Sid.
-     * @param string $addressSid Address sid.
-     * @param string $email Email.
      */
-    public function __construct($accountSid = Values::NONE, $friendlyName = Values::NONE, $uniqueName = Values::NONE, $ccEmails = Values::NONE, $smsUrl = Values::NONE, $smsMethod = Values::NONE, $smsFallbackUrl = Values::NONE, $smsFallbackMethod = Values::NONE, $statusCallbackUrl = Values::NONE, $statusCallbackMethod = Values::NONE, $smsApplicationSid = Values::NONE, $addressSid = Values::NONE, $email = Values::NONE) {
+    public function __construct($accountSid = Values::NONE, $friendlyName = Values::NONE, $uniqueName = Values::NONE, $ccEmails = Values::NONE, $smsUrl = Values::NONE, $smsMethod = Values::NONE, $smsFallbackUrl = Values::NONE, $smsFallbackMethod = Values::NONE, $statusCallbackUrl = Values::NONE, $statusCallbackMethod = Values::NONE, $smsApplicationSid = Values::NONE) {
         $this->options['accountSid'] = $accountSid;
         $this->options['friendlyName'] = $friendlyName;
         $this->options['uniqueName'] = $uniqueName;
@@ -285,8 +281,6 @@ class CreateHostedNumberOrderOptions extends Options {
         $this->options['statusCallbackUrl'] = $statusCallbackUrl;
         $this->options['statusCallbackMethod'] = $statusCallbackMethod;
         $this->options['smsApplicationSid'] = $smsApplicationSid;
-        $this->options['addressSid'] = $addressSid;
-        $this->options['email'] = $email;
     }
 
     /**
@@ -408,28 +402,6 @@ class CreateHostedNumberOrderOptions extends Options {
      */
     public function setSmsApplicationSid($smsApplicationSid) {
         $this->options['smsApplicationSid'] = $smsApplicationSid;
-        return $this;
-    }
-
-    /**
-     * Optional. A 34 character string that uniquely identifies the Address resource that represents the address of the owner of this phone number.
-     * 
-     * @param string $addressSid Address sid.
-     * @return $this Fluent Builder
-     */
-    public function setAddressSid($addressSid) {
-        $this->options['addressSid'] = $addressSid;
-        return $this;
-    }
-
-    /**
-     * Optional. Email of the owner of this phone number that is being hosted.
-     * 
-     * @param string $email Email.
-     * @return $this Fluent Builder
-     */
-    public function setEmail($email) {
-        $this->options['email'] = $email;
         return $this;
     }
 

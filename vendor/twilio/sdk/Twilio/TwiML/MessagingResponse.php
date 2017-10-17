@@ -20,12 +20,12 @@ class MessagingResponse extends TwiML {
     /**
      * Add Message child.
      * 
-     * @param string $body Message Body
+     * @param string $message Message Body
      * @param array $attributes Optional attributes
      * @return TwiML Child element.
      */
-    public function message($body, $attributes = array()) {
-        return $this->nest(new Messaging\Message($body, $attributes));
+    public function message($message, $attributes = array()) {
+        return $this->nest(new Messaging\Message($message, $attributes));
     }
 
     /**

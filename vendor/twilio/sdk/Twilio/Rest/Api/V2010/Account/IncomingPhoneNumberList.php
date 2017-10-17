@@ -172,7 +172,6 @@ class IncomingPhoneNumberList extends ListResource {
             'EmergencyStatus' => $options['emergencyStatus'],
             'EmergencyAddressSid' => $options['emergencyAddressSid'],
             'TrunkSid' => $options['trunkSid'],
-            'IdentitySid' => $options['identitySid'],
         ));
 
         $payload = $this->version->create(

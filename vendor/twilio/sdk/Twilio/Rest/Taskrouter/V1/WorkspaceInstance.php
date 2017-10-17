@@ -41,8 +41,8 @@ class WorkspaceInstance extends InstanceResource {
     protected $_workers = null;
     protected $_workflows = null;
     protected $_statistics = null;
-    protected $_realTimeStatistics = null;
-    protected $_cumulativeStatistics = null;
+    protected $_workspaceRealTimeStatistics = null;
+    protected $_workspaceCumulativeStatistics = null;
     protected $_taskChannels = null;
 
     /**
@@ -192,21 +192,21 @@ class WorkspaceInstance extends InstanceResource {
     }
 
     /**
-     * Access the realTimeStatistics
+     * Access the workspaceRealTimeStatistics
      * 
      * @return \Twilio\Rest\Taskrouter\V1\Workspace\WorkspaceRealTimeStatisticsList 
      */
-    protected function getRealTimeStatistics() {
-        return $this->proxy()->realTimeStatistics;
+    protected function getWorkspaceRealTimeStatistics() {
+        return $this->proxy()->workspaceRealTimeStatistics;
     }
 
     /**
-     * Access the cumulativeStatistics
+     * Access the workspaceCumulativeStatistics
      * 
      * @return \Twilio\Rest\Taskrouter\V1\Workspace\WorkspaceCumulativeStatisticsList 
      */
-    protected function getCumulativeStatistics() {
-        return $this->proxy()->cumulativeStatistics;
+    protected function getWorkspaceCumulativeStatistics() {
+        return $this->proxy()->workspaceCumulativeStatistics;
     }
 
     /**

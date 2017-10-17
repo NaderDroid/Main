@@ -15,11 +15,11 @@ class Message extends TwiML {
     /**
      * Message constructor.
      * 
-     * @param string $body Message Body
+     * @param string $message Message Body
      * @param array $attributes Optional attributes
      */
-    public function __construct($body, $attributes = array()) {
-        parent::__construct('Message', $body, $attributes);
+    public function __construct($message, $attributes = array()) {
+        parent::__construct('Message', $message, $attributes);
     }
 
     /**

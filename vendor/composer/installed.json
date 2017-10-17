@@ -1,17 +1,63 @@
 [
     {
-        "name": "twilio/sdk",
-        "version": "5.15.2",
-        "version_normalized": "5.15.2.0",
+        "name": "heroku/heroku-buildpack-php",
+        "version": "v124",
+        "version_normalized": "124.0.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/twilio/twilio-php.git",
-            "reference": "39dd4ae7e2d8b8ae33e5aa80d67cf55bcc2fd5d2"
+            "url": "https://github.com/heroku/heroku-buildpack-php.git",
+            "reference": "ae364349c513e569d7d4614ab3b1767eb883b858"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/twilio/twilio-php/zipball/39dd4ae7e2d8b8ae33e5aa80d67cf55bcc2fd5d2",
-            "reference": "39dd4ae7e2d8b8ae33e5aa80d67cf55bcc2fd5d2",
+            "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/ae364349c513e569d7d4614ab3b1767eb883b858",
+            "reference": "ae364349c513e569d7d4614ab3b1767eb883b858",
+            "shasum": ""
+        },
+        "time": "2017-09-07T23:07:36+00:00",
+        "bin": [
+            "bin/heroku-hhvm-apache2",
+            "bin/heroku-hhvm-nginx",
+            "bin/heroku-php-apache2",
+            "bin/heroku-php-nginx"
+        ],
+        "type": "library",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "David Zuelke",
+                "email": "dz@heroku.com"
+            }
+        ],
+        "description": "Toolkit for starting a PHP application locally, with or without foreman, using the same config for PHP/HHVM and Apache2/Nginx as on Heroku",
+        "homepage": "https://github.com/heroku/heroku-buildpack-php",
+        "keywords": [
+            "apache",
+            "apache2",
+            "foreman",
+            "heroku",
+            "hhvm",
+            "nginx",
+            "php"
+        ]
+    },
+    {
+        "name": "twilio/sdk",
+        "version": "5.15.0",
+        "version_normalized": "5.15.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/twilio/twilio-php.git",
+            "reference": "bb76b575d9024b267de92994665234a344068ffb"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/twilio/twilio-php/zipball/bb76b575d9024b267de92994665234a344068ffb",
+            "reference": "bb76b575d9024b267de92994665234a344068ffb",
             "shasum": ""
         },
         "require": {
@@ -21,7 +67,7 @@
             "apigen/apigen": "^4.1",
             "phpunit/phpunit": "4.5.*"
         },
-        "time": "2017-10-13T22:01:55+00:00",
+        "time": "2017-09-28T21:51:47+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {

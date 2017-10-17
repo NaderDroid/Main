@@ -32,8 +32,8 @@ use Twilio\Version;
  * @property array links
  */
 class WorkerInstance extends InstanceResource {
-    protected $_realTimeStatistics = null;
-    protected $_cumulativeStatistics = null;
+    protected $_workersRealTimeStatistics = null;
+    protected $_workersCumulativeStatistics = null;
     protected $_statistics = null;
     protected $_reservations = null;
     protected $_workerChannels = null;
@@ -123,21 +123,21 @@ class WorkerInstance extends InstanceResource {
     }
 
     /**
-     * Access the realTimeStatistics
+     * Access the workersRealTimeStatistics
      * 
      * @return \Twilio\Rest\Taskrouter\V1\Workspace\Worker\WorkersRealTimeStatisticsList 
      */
-    protected function getRealTimeStatistics() {
-        return $this->proxy()->realTimeStatistics;
+    protected function getWorkersRealTimeStatistics() {
+        return $this->proxy()->workersRealTimeStatistics;
     }
 
     /**
-     * Access the cumulativeStatistics
+     * Access the workersCumulativeStatistics
      * 
      * @return \Twilio\Rest\Taskrouter\V1\Workspace\Worker\WorkersCumulativeStatisticsList 
      */
-    protected function getCumulativeStatistics() {
-        return $this->proxy()->cumulativeStatistics;
+    protected function getWorkersCumulativeStatistics() {
+        return $this->proxy()->workersCumulativeStatistics;
     }
 
     /**

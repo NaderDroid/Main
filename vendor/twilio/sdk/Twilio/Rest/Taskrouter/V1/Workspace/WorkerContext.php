@@ -21,20 +21,20 @@ use Twilio\Values;
 use Twilio\Version;
 
 /**
- * @property \Twilio\Rest\Taskrouter\V1\Workspace\Worker\WorkersRealTimeStatisticsList realTimeStatistics
- * @property \Twilio\Rest\Taskrouter\V1\Workspace\Worker\WorkersCumulativeStatisticsList cumulativeStatistics
+ * @property \Twilio\Rest\Taskrouter\V1\Workspace\Worker\WorkersRealTimeStatisticsList workersRealTimeStatistics
+ * @property \Twilio\Rest\Taskrouter\V1\Workspace\Worker\WorkersCumulativeStatisticsList workersCumulativeStatistics
  * @property \Twilio\Rest\Taskrouter\V1\Workspace\Worker\WorkerStatisticsList statistics
  * @property \Twilio\Rest\Taskrouter\V1\Workspace\Worker\ReservationList reservations
  * @property \Twilio\Rest\Taskrouter\V1\Workspace\Worker\WorkerChannelList workerChannels
- * @method \Twilio\Rest\Taskrouter\V1\Workspace\Worker\WorkersRealTimeStatisticsContext realTimeStatistics()
- * @method \Twilio\Rest\Taskrouter\V1\Workspace\Worker\WorkersCumulativeStatisticsContext cumulativeStatistics()
+ * @method \Twilio\Rest\Taskrouter\V1\Workspace\Worker\WorkersRealTimeStatisticsContext workersRealTimeStatistics()
+ * @method \Twilio\Rest\Taskrouter\V1\Workspace\Worker\WorkersCumulativeStatisticsContext workersCumulativeStatistics()
  * @method \Twilio\Rest\Taskrouter\V1\Workspace\Worker\WorkerStatisticsContext statistics()
  * @method \Twilio\Rest\Taskrouter\V1\Workspace\Worker\ReservationContext reservations(string $sid)
  * @method \Twilio\Rest\Taskrouter\V1\Workspace\Worker\WorkerChannelContext workerChannels(string $sid)
  */
 class WorkerContext extends InstanceContext {
-    protected $_realTimeStatistics = null;
-    protected $_cumulativeStatistics = null;
+    protected $_workersRealTimeStatistics = null;
+    protected $_workersCumulativeStatistics = null;
     protected $_statistics = null;
     protected $_reservations = null;
     protected $_workerChannels = null;
@@ -121,35 +121,35 @@ class WorkerContext extends InstanceContext {
     }
 
     /**
-     * Access the realTimeStatistics
+     * Access the workersRealTimeStatistics
      * 
      * @return \Twilio\Rest\Taskrouter\V1\Workspace\Worker\WorkersRealTimeStatisticsList 
      */
-    protected function getRealTimeStatistics() {
-        if (!$this->_realTimeStatistics) {
-            $this->_realTimeStatistics = new WorkersRealTimeStatisticsList(
+    protected function getWorkersRealTimeStatistics() {
+        if (!$this->_workersRealTimeStatistics) {
+            $this->_workersRealTimeStatistics = new WorkersRealTimeStatisticsList(
                 $this->version,
                 $this->solution['workspaceSid']
             );
         }
 
-        return $this->_realTimeStatistics;
+        return $this->_workersRealTimeStatistics;
     }
 
     /**
-     * Access the cumulativeStatistics
+     * Access the workersCumulativeStatistics
      * 
      * @return \Twilio\Rest\Taskrouter\V1\Workspace\Worker\WorkersCumulativeStatisticsList 
      */
-    protected function getCumulativeStatistics() {
-        if (!$this->_cumulativeStatistics) {
-            $this->_cumulativeStatistics = new WorkersCumulativeStatisticsList(
+    protected function getWorkersCumulativeStatistics() {
+        if (!$this->_workersCumulativeStatistics) {
+            $this->_workersCumulativeStatistics = new WorkersCumulativeStatisticsList(
                 $this->version,
                 $this->solution['workspaceSid']
             );
         }
 
-        return $this->_cumulativeStatistics;
+        return $this->_workersCumulativeStatistics;
     }
 
     /**

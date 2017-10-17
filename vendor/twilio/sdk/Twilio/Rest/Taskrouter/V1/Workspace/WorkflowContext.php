@@ -20,16 +20,16 @@ use Twilio\Version;
 
 /**
  * @property \Twilio\Rest\Taskrouter\V1\Workspace\Workflow\WorkflowStatisticsList statistics
- * @property \Twilio\Rest\Taskrouter\V1\Workspace\Workflow\WorkflowRealTimeStatisticsList realTimeStatistics
- * @property \Twilio\Rest\Taskrouter\V1\Workspace\Workflow\WorkflowCumulativeStatisticsList cumulativeStatistics
+ * @property \Twilio\Rest\Taskrouter\V1\Workspace\Workflow\WorkflowRealTimeStatisticsList workflowRealTimeStatistics
+ * @property \Twilio\Rest\Taskrouter\V1\Workspace\Workflow\WorkflowCumulativeStatisticsList workflowCumulativeStatistics
  * @method \Twilio\Rest\Taskrouter\V1\Workspace\Workflow\WorkflowStatisticsContext statistics()
- * @method \Twilio\Rest\Taskrouter\V1\Workspace\Workflow\WorkflowRealTimeStatisticsContext realTimeStatistics()
- * @method \Twilio\Rest\Taskrouter\V1\Workspace\Workflow\WorkflowCumulativeStatisticsContext cumulativeStatistics()
+ * @method \Twilio\Rest\Taskrouter\V1\Workspace\Workflow\WorkflowRealTimeStatisticsContext workflowRealTimeStatistics()
+ * @method \Twilio\Rest\Taskrouter\V1\Workspace\Workflow\WorkflowCumulativeStatisticsContext workflowCumulativeStatistics()
  */
 class WorkflowContext extends InstanceContext {
     protected $_statistics = null;
-    protected $_realTimeStatistics = null;
-    protected $_cumulativeStatistics = null;
+    protected $_workflowRealTimeStatistics = null;
+    protected $_workflowCumulativeStatistics = null;
 
     /**
      * Initialize the WorkflowContext
@@ -132,37 +132,37 @@ class WorkflowContext extends InstanceContext {
     }
 
     /**
-     * Access the realTimeStatistics
+     * Access the workflowRealTimeStatistics
      * 
      * @return \Twilio\Rest\Taskrouter\V1\Workspace\Workflow\WorkflowRealTimeStatisticsList 
      */
-    protected function getRealTimeStatistics() {
-        if (!$this->_realTimeStatistics) {
-            $this->_realTimeStatistics = new WorkflowRealTimeStatisticsList(
+    protected function getWorkflowRealTimeStatistics() {
+        if (!$this->_workflowRealTimeStatistics) {
+            $this->_workflowRealTimeStatistics = new WorkflowRealTimeStatisticsList(
                 $this->version,
                 $this->solution['workspaceSid'],
                 $this->solution['sid']
             );
         }
 
-        return $this->_realTimeStatistics;
+        return $this->_workflowRealTimeStatistics;
     }
 
     /**
-     * Access the cumulativeStatistics
+     * Access the workflowCumulativeStatistics
      * 
      * @return \Twilio\Rest\Taskrouter\V1\Workspace\Workflow\WorkflowCumulativeStatisticsList 
      */
-    protected function getCumulativeStatistics() {
-        if (!$this->_cumulativeStatistics) {
-            $this->_cumulativeStatistics = new WorkflowCumulativeStatisticsList(
+    protected function getWorkflowCumulativeStatistics() {
+        if (!$this->_workflowCumulativeStatistics) {
+            $this->_workflowCumulativeStatistics = new WorkflowCumulativeStatisticsList(
                 $this->version,
                 $this->solution['workspaceSid'],
                 $this->solution['sid']
             );
         }
 
-        return $this->_cumulativeStatistics;
+        return $this->_workflowCumulativeStatistics;
     }
 
     /**
